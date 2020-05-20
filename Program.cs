@@ -38,7 +38,7 @@ namespace JurrasicPark
             {
                 Name = "Tyrannosaurus",
                 DietType = "Carnivore",
-                WhenAcquired = DateTime.Today,
+                WhenAcquired = DateTime.Now,
                 Weight = "12.5 tons",
                 EnclouserNumber = 10,
             };
@@ -47,7 +47,7 @@ namespace JurrasicPark
             {
                 Name = "Triceratops",
                 DietType = "Herbivore",
-                WhenAcquired = DateTime.Today,
+                WhenAcquired = DateTime.Now,
                 Weight = "10 tons",
                 EnclouserNumber = 2,
             };
@@ -56,7 +56,7 @@ namespace JurrasicPark
             {
                 Name = "Velociraptor",
                 DietType = "Carnivore",
-                WhenAcquired = DateTime.Today,
+                WhenAcquired = DateTime.Now,
                 Weight = "30 pounds",
                 EnclouserNumber = 10,
             };
@@ -87,6 +87,34 @@ namespace JurrasicPark
 
                 var option = PromptForString("Option: ");
 
+                // display the number of carnivores and herbivores                
+                if (option == "S")
+                {
+
+                }
+
+                if (option == "T")
+                {
+                    var nameOfDinosaurToFind = PromptForString("Name of Dinosaur being moved to another enclouser");
+
+                    var foundDinosaur = listOfDinosaurs.FirstOrDefault(dinosaur => dinosaur.Name == nameOfDinosaurToFind);
+
+                    if (foundDinosaur == null)
+                    {
+                        Console.WriteLine($"Sorry, there is no Dinosaur named {nameOfDinosaurToFind}");
+                    }
+                    else
+                    {
+                        var foundDinosaurDescription = foundDinosaur.Description();
+                        Console.WriteLine(foundDinosaurDescription);
+
+                        var newDinosaurEnclosure = PromptForInteger("New Enclosure Number: ");
+
+                        foundDinosaur.EnclouserNumber = newDinosaurEnclosure;
+                    }
+                }
+
+
                 if (option == "Q")
                 {
                     userWantsToQuit = true;
@@ -96,7 +124,7 @@ namespace JurrasicPark
                 {
                     var newName = PromptForString("Name: ");
                     var newDietType = PromptForString("DietType: ");
-                    var newWhenAcquired = DateTime.Today;
+                    var newWhenAcquired = DateTime.Now;
                     var newWeight = PromptForString("Weight: ");
                     var newEnclouserNumber = PromptForInteger("EnclosureNumber: ");
 
@@ -115,12 +143,11 @@ namespace JurrasicPark
 
                 if (option == "V")
                 {
-                    //foreach (var dinosaur in listOfDinosaurs)
-                    //{
-                    //var description = dinosaur.Description();
-                    //description.OrderBy(dinosaur => dinosaur.Name);
-                    //return description;
-                    //}
+                    foreach (var dinosaur in listOfDinosaurs)
+                    {
+                        var description = dinosaur.Description();
+                        Console.WriteLine(description);
+                    }
                 }
 
                 if (option == "R")
