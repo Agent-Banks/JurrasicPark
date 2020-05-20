@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JurrasicPark
 {
@@ -111,6 +112,44 @@ namespace JurrasicPark
                     listOfDinosaurs.Add(newDinosaur);
 
                 }
+
+                if (option == "V")
+                {
+                    //foreach (var dinosaur in listOfDinosaurs)
+                    //{
+                    //var description = dinosaur.Description();
+                    //description.OrderBy(dinosaur => dinosaur.Name);
+                    //return description;
+                    //}
+                }
+
+                if (option == "R")
+                {
+                    var nameOfDinosaurToFind = PromptForString("Name of Dinosaur being removed: ");
+
+                    var foundDinosaur = listOfDinosaurs.FirstOrDefault(dinosaur => dinosaur.Name == nameOfDinosaurToFind);
+
+                    if (foundDinosaur == null)
+                    {
+                        Console.WriteLine($"Sorry, there is no Dinosaur named {nameOfDinosaurToFind}");
+
+                    }
+
+                    else
+                    {
+                        var foundDinosaurDescription = foundDinosaur.Description();
+                        Console.WriteLine(foundDinosaurDescription);
+
+                        var shouldWeDelete = PromptForString("Are you sure you want to delete this dinosaur from the database? (Y/N) ");
+
+                        if (shouldWeDelete == "Y")
+                        {
+                            listOfDinosaurs.Remove(foundDinosaur);
+                        }
+                    }
+                }
+
+
             }
         }
     }
