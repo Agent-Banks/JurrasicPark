@@ -37,7 +37,7 @@ namespace JurrasicPark
             {
                 Name = "Tyrannosaurus",
                 DietType = "Carnivore",
-                WhenAcquired = "",
+                WhenAcquired = DateTime.Today,
                 Weight = "12.5 tons",
                 EnclouserNumber = 10,
             };
@@ -46,7 +46,7 @@ namespace JurrasicPark
             {
                 Name = "Triceratops",
                 DietType = "Herbivore",
-                WhenAcquired = "",
+                WhenAcquired = DateTime.Today,
                 Weight = "10 tons",
                 EnclouserNumber = 2,
             };
@@ -55,7 +55,7 @@ namespace JurrasicPark
             {
                 Name = "Velociraptor",
                 DietType = "Carnivore",
-                WhenAcquired = "",
+                WhenAcquired = DateTime.Today,
                 Weight = "30 pounds",
                 EnclouserNumber = 10,
             };
@@ -91,6 +91,26 @@ namespace JurrasicPark
                     userWantsToQuit = true;
                 }
 
+                if (option == "A")
+                {
+                    var newName = PromptForString("Name: ");
+                    var newDietType = PromptForString("DietType: ");
+                    var newWhenAcquired = DateTime.Today;
+                    var newWeight = PromptForString("Weight: ");
+                    var newEnclouserNumber = PromptForInteger("EnclosureNumber: ");
+
+                    var newDinosaur = new Dinosaur
+                    {
+                        Name = newName,
+                        DietType = newDietType,
+                        WhenAcquired = newWhenAcquired,
+                        Weight = newWeight,
+                        EnclouserNumber = newEnclouserNumber,
+                    };
+
+                    listOfDinosaurs.Add(newDinosaur);
+
+                }
             }
         }
     }

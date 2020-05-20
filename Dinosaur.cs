@@ -1,10 +1,12 @@
+using System;
+
 class Dinosaur
 {
     public string Name { get; set; }
 
     public string DietType { get; set; }
 
-    public string WhenAcquired { get; set; }
+    public DateTime WhenAcquired { get; set; }
 
     public string Weight { get; set; }
 
