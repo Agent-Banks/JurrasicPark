@@ -87,9 +87,16 @@ namespace JurrasicPark
 
                 var option = PromptForString("Option: ");
 
-                // display the number of carnivores and herbivores                
+                // display the number of carnivores and herbivores
+                // there are 3 carnivores and 2 herbivores
+                // get the number of times carnivore is shown
+                // get the number of times herbivores is shown
+
                 if (option == "S")
                 {
+                    var numberOfHerbivores = listOfDinosaurs.Count(dinosaur => dinosaur.DietType == "Herbivore");
+                    var numberOfCarnivores = listOfDinosaurs.Count(dinosaur => dinosaur.DietType == "Carnivore");
+                    Console.WriteLine($"There are {numberOfHerbivores} Herbivores and {numberOfCarnivores} Carnivores");
 
                 }
 
@@ -146,6 +153,7 @@ namespace JurrasicPark
                     foreach (var dinosaur in listOfDinosaurs)
                     {
                         var description = dinosaur.Description();
+
                         Console.WriteLine(description);
                     }
                 }
