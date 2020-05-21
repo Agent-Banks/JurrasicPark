@@ -152,6 +152,7 @@ namespace JurrasicPark
                 {
                     foreach (var dinosaur in listOfDinosaurs)
                     {
+                        var dateAcquired = listOfDinosaurs.OrderBy(dinosaur => dinosaur.WhenAcquired);
                         var description = dinosaur.Description();
 
                         Console.WriteLine(description);
