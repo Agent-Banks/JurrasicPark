@@ -115,9 +115,9 @@ namespace JurrasicPark
                         var foundDinosaurDescription = foundDinosaur.Description();
                         Console.WriteLine(foundDinosaurDescription);
 
-                        var newDinosaurEnclosure = PromptForInteger("New Enclosure Number: ");
+                        var newDinosaurEnclouser = PromptForInteger("New Enclosure Number: ");
 
-                        foundDinosaur.EnclouserNumber = newDinosaurEnclosure;
+                        foundDinosaur.EnclouserNumber = newDinosaurEnclouser;
                     }
                 }
 
