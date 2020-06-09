@@ -1,4 +1,4 @@
-# SDG Assignment #5 : 02 - 03 - Jurrasic Park
+# SDG Assignment #6 : 02 - 03 - Jurrasic Park
 
 In this assignment, you will be creating a console application that manages a zoo
 full of dinosaurs.
